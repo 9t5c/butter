@@ -6,7 +6,9 @@ export const useRipple = <T extends HTMLElement>(): Ref<T> => {
 
   useEffect(() => {
     if (ref.current) {
-      new Ripple(ref.current);
+      const instance = new Ripple(ref.current);
+
+      return () => instance.destory();
     }
   }, [ref.current]);
 
