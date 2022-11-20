@@ -1,0 +1,21 @@
+.eb-ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.eb-ripple-wrap {
+  position: absolute;
+  top: var(--y);
+  left: var(--x);
+  width: var(--ripple-size);
+  height: var(--ripple-size);
+  background: var(--background);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition-property: transform;
+  transition-duration: var(--duration);
+}
+
+.eb-ripple:hover .eb-ripple-wrap {
+  transform: translate(-50%, -50%) scale(1);
+}

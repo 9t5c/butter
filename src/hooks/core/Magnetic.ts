@@ -33,7 +33,7 @@ export class Magnetic {
   interpolationFactor: number = 0.8;
   mousePosition = { x: 0, y: 0 };
 
-  private setBCR() {
+  setBCR() {
     this.boundingClientRect = this.dom.getBoundingClientRect();
   }
 
@@ -42,7 +42,6 @@ export class Magnetic {
   }
 
   setMousePosition = (e: MouseEvent) => {
-    console.log("move");
     this.mousePosition.x = e.pageX;
     this.mousePosition.y = e.pageY;
   };

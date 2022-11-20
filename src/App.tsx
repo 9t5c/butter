@@ -1,19 +1,15 @@
-import { useRef, useState } from "react";
 import "./App.css";
-import { useHoverReverso } from "./hooks/useHoverReverso";
+
+import { useRipple } from "./hooks/useRipple";
 
 function App() {
-  const triggerRef = useHoverReverso<HTMLDivElement>();
+  const triggerRef = useRipple<HTMLButtonElement>();
 
   return (
     <div className="App">
-      <div className="wrap">
-        <div ref={triggerRef} className="box">
-          Menu
-        </div>
-
-        <p>hello</p>
-      </div>
+      <button className="button" ref={triggerRef}>
+        this is a button
+      </button>
     </div>
   );
 }
