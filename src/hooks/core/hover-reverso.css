@@ -1,0 +1,34 @@
+.eb-hover-reverso {
+  position: relative;
+}
+
+.eb-hover-reverso-placeholder {
+  display: inline-block;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.eb-hover-reverso::after {
+  content: attr(data-text);
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: currentColor;
+  opacity: 0;
+  transform: translateY(25%);
+}
+
+.eb-hover-reverso:hover .eb-hover-reverso-placeholder {
+  opacity: 0;
+  transform: translateY(-25%);
+  transition: transform 0.6s, opacity 0.6s;
+}
+
+.eb-hover-reverso:hover::after {
+  opacity: 1;
+  transform: translateY(0);
+  transition: transform 0.6s, opacity 0.6s;
+}
