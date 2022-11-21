@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "@butter/core": "workspace:^0.0.1",
-    "@butter/react": "workspace:^0.0.1"
+    "@butter/react": "workspace:^0.0.1",
+    "@butter/svelte": "workspace:^0.0.1"
   }
 }

@@ -1,14 +1,16 @@
-import { useHoverReverso, useRipple } from '@butter/react'
+import { useHoverReverso, useMagnetic, useRipple } from '@butter/react'
+import { useState } from 'react'
 
 function App() {
-  const ref = useHoverReverso()
+  const [buttonRef, setButtonRef] = useState<HTMLButtonElement | null>(null)
+
+  const isMagnetic = useMagnetic<HTMLButtonElement>(buttonRef!)
 
   return (
-    <button>
-      <div style={{ width: '100%', height: '100%' }} ref={ref}>
-        this is button
-      </div>
-    </button>
+    <div>
+      <button ref={setButtonRef}>hello</button>
+      <p>{isMagnetic ? 'true' : 'false'}</p>
+    </div>
   )
 }
 

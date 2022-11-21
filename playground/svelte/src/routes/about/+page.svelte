@@ -1,26 +1,22 @@
-<svelte:head>
-	<title>About</title>
-	<meta name="description" content="About this app" />
-</svelte:head>
+<script lang="ts">
+	import { hoverReverso, magnetic, ripple } from '@butter/svelte';
 
-<div class="text-column">
-	<h1>About this app</h1>
+	const handleMagnetize = (e: CustomEvent<boolean>) => {
+		console.log(e.detail);
+	};
+</script>
 
-	<p>
-		This is a <a href="https://kit.svelte.dev">SvelteKit</a> app. You can make your own by typing the
-		following into your command line and following the prompts:
-	</p>
+<div>
+	<button use:ripple>this is button</button>
 
-	<pre>npm create svelte@latest</pre>
+	<br />
 
-	<p>
-		The page you're looking at is purely static HTML, with no client-side interactivity needed.
-		Because of that, we don't need to load any JavaScript. Try viewing the page's source, or opening
-		the devtools network panel and reloading.
-	</p>
+	<br />
+	<div use:hoverReverso>Hover me</div>
+</div>
 
-	<p>
-		The <a href="/sverdle">Sverdle</a> page illustrates SvelteKit's data loading and form handling. Try
-		using it with JavaScript disabled!
-	</p>
+<br />
+<br />
+<div>
+	<div style="width: 100px;" use:magnetic on:magnetized={handleMagnetize}>this is mag</div>
 </div>

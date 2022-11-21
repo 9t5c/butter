@@ -6,9 +6,11 @@ importers:
     specifiers:
       '@butter/core': workspace:^0.0.1
       '@butter/react': workspace:^0.0.1
+      '@butter/svelte': workspace:^0.0.1
     dependencies:
       '@butter/core': link:src/core
       '@butter/react': link:src/react
+      '@butter/svelte': link:src/svelte
 
   playground/react:
     specifiers:
@@ -69,7 +71,10 @@ importers:
       react: 18.2.0
 
   src/svelte:
-    specifiers: {}
+    specifiers:
+      typescript: ^4.6.4
+    devDependencies:
+      typescript: 4.9.3
 
 packages:
 
