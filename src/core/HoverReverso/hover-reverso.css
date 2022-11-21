@@ -1,5 +1,6 @@
 .eb-hover-reverso {
   position: relative;
+  overflow: hidden;
 }
 
 .eb-hover-reverso-placeholder {
