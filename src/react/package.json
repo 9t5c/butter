@@ -1,0 +1,12 @@
+{
+  "name": "@butter/react",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.ts",
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "react": "^18.2.0"
+  }
+}
