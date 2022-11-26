@@ -1,15 +1,23 @@
-import { useHoverReverso, useMagnetic, useRipple } from '@butter/react'
-import { useState } from 'react'
+import { useCollapse } from '@butter/react'
+import { useRef, useState } from 'react'
 
 function App() {
-  const [buttonRef, setButtonRef] = useState<HTMLButtonElement | null>(null)
+  const { getTriggerProps, getCollapseProps } = useCollapse()
 
-  const isMagnetic = useMagnetic<HTMLButtonElement>(buttonRef!)
+  const [show, setShow] = useState(true)
 
   return (
     <div>
-      <button ref={setButtonRef}>hello</button>
-      <p>{isMagnetic ? 'true' : 'false'}</p>
+      <button onClick={() => setShow(prev => !prev)}>show</button>
+
+      <button {...getTriggerProps()}>trigger</button>
+
+      <div {...getCollapseProps()}>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia magni
+        aspernatur quas! Saepe ullam delectus velit magnam culpa provident,
+        perspiciatis, ea nihil quidem harum sequi at, quaerat consequatur
+        dolorum! Necessitatibus.
+      </div>
     </div>
   )
 }
